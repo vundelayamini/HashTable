@@ -25,6 +25,8 @@ namespace HashTables
                 hash1.Add(key, word);
                 key++;
             }
+            //Remove aviodable word from the paragragh
+            hash.Remove(hash1, "avoidable");
 
 
         }

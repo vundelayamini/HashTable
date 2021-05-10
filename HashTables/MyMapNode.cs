@@ -27,7 +27,7 @@ namespace HashTables
         Dictionary<string, int> frequency = new Dictionary<string, int>();
         public void Frequency(MyMapNode<int, string> hash)
         {
-           
+
             for (int key = 0; key < hash.size; key++)
             {
                 frequency.TryAdd(hash.Get(key).ToLower(), 0);
@@ -88,11 +88,24 @@ namespace HashTables
             }
             return linkedList;
         }
-    }
-    public struct KeyValue<k, v>
-    {
-        public k Key { get; set; }
-        public v Value { get; set; }
+
+        //Remove word from paragraph.
+        public void Remove(MyMapNode<int, string> hash, string word)
+        {
+            for (int key = 0; key < hash.size; key++)
+            {
+                if (hash.Get(key).Equals(word))
+                {
+                    hash.Remove(key);
+                    Console.WriteLine($"Removed {word} from paragraph");
+                }
+            }
+        }
+        public struct KeyValue<k, v>
+        {
+            public k Key { get; set; }
+            public v Value { get; set; }
+        }
     }
 }
 
